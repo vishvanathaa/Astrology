@@ -1,0 +1,122 @@
+extends layout
+block layout-content
+    div(style='padding:10px;')
+      div.Message(style='height:120px;')
+        div.Title
+          h4 Know Your Day
+          h3 Astrology based on indian vedic science
+    div(style='padding:20px;')
+      div.row
+            .col-md-2
+              h3 ARIES
+              p
+              img.clsSign#zodiac(src="images/aries.png" alt="Aries")
+              p (21 March - 20 April)  
+              p
+                a.btn.btn-raised(href='/birthsign?sign=Aries', role='button' onclick="startSpinner()" ) View details »
+            .col-md-2
+              h3 TAURUS
+              p 
+              img.clsSign#zodiac(src="images/taurus.png" alt="Taurus")
+              p (21 April – 21 May) 
+              p
+                a.btn.btn-raised(href='/birthsign?sign=Taurus', role='button' onclick='startSpinner();') View details »
+            .col-md-2
+              h3 GEMINI
+              p 
+              img.clsSign#zodiac(src="images/Gemini.png" alt="Zemini")
+              p (22 May – 21 June) 
+              p
+                a.btn.btn-raised(href='/birthsign?sign=Gemini', role='button' onclick='startSpinner();') View details »
+            .col-md-2
+              h3 CANCER
+              p 
+              img.clsSign#zodiac(src="images/Cancer.png" alt="Zemini")
+              p (22 June – 22 July) 
+              p
+                a.btn.btn-raised(href='/birthsign?sign=Cancer', role='button' onclick='startSpinner();') View details »
+            .col-md-2
+              h3 LEO
+              p 
+              img.clsSign#zodiac(src="images/Leo.png" alt="Leo")
+              p (23 July – 22 August) 
+              p
+                a.btn.btn-raised(href='/birthsign?sign=Leo', role='button' onclick='startSpinner();') View details »
+            .col-md-2
+              h3 VIRGO
+              p 
+              img.clsSign#zodiac(src="images/Virgo.png" alt="Virgo")
+              p (23 August – 23 September) 
+              p
+                a.btn.btn-raised(href='/birthsign?sign=Virgo', role='button' onclick='startSpinner();') View details »
+      div.row
+            .col-md-2
+              h3 LIBRA
+              p 
+              img.clsSign#zodiac(src="images/Libra.png" alt="Libra")
+              p (24 September – 23 October) 
+              p
+                a.btn.btn-raised(href='/birthsign?sign=Libra', role='button' onclick='startSpinner();') View details »
+            .col-md-2
+              h3 SCORPIO
+              p 
+              img.clsSign#zodiac(src="images/Scorpio.png" alt="Scorpio")
+              p (24 October – 22 November) 
+              p
+                a.btn.btn-raised(href='/birthsign?sign=Scorpio', role='button' onclick='startSpinner();') View details »
+            .col-md-2
+              h3 SAGITTARIUS
+              p 
+              img.clsSign#zodiac(src="images/Sagattarius.png" alt="Sagattarius")
+              p (23 November – 21 December) 
+              p
+                a.btn.btn-raised(href='/birthsign?sign=Sagattarius', role='button' onclick='startSpinner();') View details »
+            .col-md-2
+              h3 CAPRICORN
+              p 
+              img.clsSign#zodiac(src="images/Capricorn.png" alt="Capricorn")
+              p (22 December – 20 January) 
+              p
+                a.btn.btn-raised(href='/birthsign?sign=Capricorn', role='button' onclick='startSpinner();') View details »
+            .col-md-2
+              h3 AQUARIUS
+              p 
+              img.clsSign#zodiac(src="images/Aquarius.png" alt="Aquarius")
+              p (21 January – 19 February)
+              p
+                a.btn.btn-raised(href='/birthsign?sign=Aquarius', role='button' onclick='startSpinner();') View details »
+            .col-md-2
+              h3 PISCES
+              p 
+              img.clsSign#zodiac(src="images/Pisces.png" alt="Pisces")
+              p (20 February – 20 March) 
+              p
+              a.btn.btn-raised(href='/birthsign?sign=Pisces', role='button' id='piscesSign' onclick='startSpinner();') View details »
+      div.view
+      each sign, i in signDetails
+        div.modal.fade(id='signmodal'+sign.name role='dialog' area-hidden='true')
+            div.modal-dialog.modal-dialog-centered(role='document')
+              div.modal-content
+                div.modal-header
+                  .row
+                  .col-md-12.p-6
+                    h3.modal-title#exampleModalLongTitle #{sign.name}
+                    h3 Astrology reveals the will of the gods
+                  .row
+                    .col-md-6.p-6
+                      img.clsSign#zodiac(src='images/'+sign.name+'.png' alt="Capricorn")
+                div.modal-body   
+                  p=sign.description
+                div.modal-footer
+                .row
+                  .col-md-6.p-6
+                    button.btn.btn-secondary(type='button' data-dismiss="modal") Close
+      div.NavButtons
+        if isAuthenticated
+          a(href="/logout")
+            div.NavButton Log out
+        else
+          a(href="/logout")
+            div.NavButton not logged in
+      script(language='javascript')=function show(){alert('')} 
+      

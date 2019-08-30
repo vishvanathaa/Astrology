@@ -1,0 +1,306 @@
+extends layout
+block layout-content
+  hr
+  form(method='POST')
+    .form-group.row
+        label(class='col-md-2 col-form-label font-weight-bold text-right', style='padding-top:0px;' for='signType') Sign Name (Rashi) :
+        .col-md-6
+            div.va-bg-gray(style='padding-bottom:10px;')
+                input(type="radio", name="radSign" value='Aries')
+                | &nbsp;&#9800;&nbsp;Aries&nbsp;&nbsp;&nbsp;
+                input(type="radio", name="radSign" value='Taurus')
+                | &nbsp;&#9801;&nbsp;Taurus&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                input(type="radio", name="radSign" value='Gemini')
+                | &nbsp;&#9802;&nbsp;Gemini&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                input(type="radio", name="radSign" value='Cancer')
+                | &nbsp;&#9803;&nbsp;Cancer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                input(type="radio", name="radSign" value='Leo')
+                | &nbsp;&#9804;&nbsp;Cancer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                input(type="radio", name="radSign" value='Virgo')
+                | &nbsp;&#9805;&nbsp;Virgo&nbsp;&nbsp;&nbsp;
+                br
+                br
+                input(type="radio", name="radSign" value='Libra')
+                | &nbsp;&#9806;&nbsp;Libra&nbsp;&nbsp;&nbsp;
+                input(type="radio", name="radSign" value='Scorpion')
+                | &nbsp;&#9807;&nbsp;Scorpion&nbsp;&nbsp;&nbsp;
+                input(type="radio", name="radSign" value='Sagittarius')
+                | &nbsp;&#9808;&nbsp;Sagittarius&nbsp;&nbsp;&nbsp;
+                input(type="radio", name="radSign" value='Capricorn')
+                | &nbsp;&#9809;&nbsp;Capricorn&nbsp;&nbsp;&nbsp;
+                input(type="radio", name="radSign" value='Aquarius')
+                | &nbsp;&#9810;&nbsp;Aquarius&nbsp;&nbsp;&nbsp;
+                input(type="radio", name="radSign" value='Pisces')
+                | &nbsp;&#9811;&nbsp;Pisces
+        .col-md-2
+            a(href="/horoscopeCollection")
+                i.fa.fa-list(style='font-size:30px;')        
+    .form-group.row
+        label(class='col-md-2 col-form-label font-weight-bold text-right', for='message' style='padding-top:0px;') Star (Nakshatra) :
+        .col-md-6
+            select(name='ddlStar', id='ddlStar')
+                each star in ['-- Select --' , 'Ashwini' , 'Bharani','Krittika','Rohini','Mrighashira','Ardra','Punarvasu','Pushya','Ashlesha','Magha','Purva Phalguni','Uttara Phalguni','Hasta','Chitra','Swati','Vishakha','Anuradha','Jyeshtha','Mula','Purva Ashadha','Uttara Ashadha','Sravana','Dhanistha','Shatabhisha','Purva Bhadrapada','Uttara Bhadrapada','Revati','Abhijit']
+                    option(value=star)=star
+            label(class='col-md-2 col-form-label font-weight-bold text-right', for='message' style='padding-top:0px;') Latitude :
+            input(type="text", name="txtLatitude" id="txtLatitude" style="align:left;width:100px"  )
+            span &nbsp;
+            i.fa.fa-map
+            label(class='col-md-2 col-form-label font-weight-bold text-right', for='message' style='padding-top:0px;') Longitude :
+            input(type="text", name="txtLongitude" id="txtLongitude" style="align:left;width:100px" )
+            span &nbsp;
+            i.fa.fa-map
+        
+    .form-group.row
+      label(class='col-md-2 col-form-label font-weight-bold text-right', for='message' style='padding-top:0px;') Planet position :
+      .col-md-6
+        .div.va-bg-gray
+            .row
+                .col-md-4
+                    label(class='col-form-label font-weight-bold text-right', for='radRahu' style='padding-top:0px;') House of Rahu : &nbsp;&nbsp;
+                    span &#9734;&#9734;&#9734;&#9734;&#9734;&#9734;
+                .col-md-8
+                    input(type="radio", name="radRahu", value="1")
+                    | &nbsp;1&nbsp;&nbsp;
+                    input(type="radio", name="radRahu", value="2")
+                    | &nbsp;2&nbsp;&nbsp;
+                    input(type="radio", name="radRahu", value="3")
+                    | &nbsp;3&nbsp;&nbsp;
+                    input(type="radio", name="radRahu", value="4")
+                    | &nbsp;4&nbsp;&nbsp;
+                    input(type="radio", name="radRahu", value="5")
+                    | &nbsp;5&nbsp;&nbsp;
+                    input(type="radio", name="radRahu", value="6")
+                    | &nbsp;6&nbsp;&nbsp;
+                    input(type="radio", name="radRahu", value="7")
+                    | &nbsp;7&nbsp;&nbsp;
+                    input(type="radio", name="radRahu", value="8")
+                    | &nbsp;8&nbsp;&nbsp;
+                    input(type="radio", name="radRahu", value="9")
+                    | &nbsp;9&nbsp;&nbsp;
+                    input(type="radio", name="radRahu", value="10")
+                    | &nbsp;10&nbsp;&nbsp;
+                    input(type="radio", name="radRahu", value="11")
+                    | &nbsp;11&nbsp;&nbsp;
+                    input(type="radio", name="radRahu", value="12")
+                    | &nbsp;12&nbsp;&nbsp;
+        .div.va-bg-gray
+            .row
+                .col-md-4
+                    label(class='col-form-label font-weight-bold text-left', for='radKetu' style='padding-top:0px;') House of Ketu :&nbsp;&nbsp;
+                    span &#9734;&#9734;&#9734;&#9734;&#9734;&#9734;&#9734;
+                .col-md-8
+                    input(type="radio", name="radKetu", value="1")
+                    | &nbsp;1&nbsp;&nbsp;
+                    input(type="radio", name="radKetu", value="2")
+                    | &nbsp;2&nbsp;&nbsp;
+                    input(type="radio", name="radKetu", value="3")
+                    | &nbsp;3&nbsp;&nbsp;
+                    input(type="radio", name="radKetu", value="4")
+                    | &nbsp;4&nbsp;&nbsp;
+                    input(type="radio", name="radKetu", value="5")
+                    | &nbsp;5&nbsp;&nbsp;
+                    input(type="radio", name="radKetu", value="6")
+                    | &nbsp;6&nbsp;&nbsp;
+                    input(type="radio", name="radKetu", value="7")
+                    | &nbsp;7&nbsp;&nbsp;
+                    input(type="radio", name="radKetu", value="8")
+                    | &nbsp;8&nbsp;&nbsp;
+                    input(type="radio", name="radKetu", value="9")
+                    | &nbsp;9&nbsp;&nbsp;
+                    input(type="radio", name="radKetu", value="10")
+                    | &nbsp;10&nbsp;&nbsp;
+                    input(type="radio", name="radKetu", value="11")
+                    | &nbsp;11&nbsp;&nbsp;
+                    input(type="radio", name="radKetu", value="12")
+                    | &nbsp;12&nbsp;&nbsp;
+        .div.va-bg-gray
+            .row
+                .col-md-4
+                    label(class='col-form-label font-weight-bold text-right', for='radKuja' style='padding-top:0px;') House of Kuja :  &nbsp;&nbsp;
+                    span &#9734;&#9734;&#9734;&#9734;&#9734;&#9734;&#9734;
+                .col-md-8
+                    input(type="radio", name="radKuja" value="1")
+                    | &nbsp;1&nbsp;&nbsp;
+                    input(type="radio", name="radKuja", value="2")
+                    | &nbsp;2&nbsp;&nbsp;
+                    input(type="radio", name="radKuja", value="3")
+                    | &nbsp;3&nbsp;&nbsp;
+                    input(type="radio", name="radKuja", value="4")
+                    | &nbsp;4&nbsp;&nbsp;
+                    input(type="radio", name="radKuja", value="5")
+                    | &nbsp;5&nbsp;&nbsp;
+                    input(type="radio", name="radKuja", value="6")
+                    | &nbsp;6&nbsp;&nbsp;
+                    input(type="radio", name="radKuja", value="7")
+                    | &nbsp;7&nbsp;&nbsp;
+                    input(type="radio", name="radKuja", value="8")
+                    | &nbsp;8&nbsp;&nbsp;
+                    input(type="radio", name="radKuja", value="9")
+                    | &nbsp;9&nbsp;&nbsp;
+                    input(type="radio", name="radKuja", value="10")
+                    | &nbsp;10&nbsp;&nbsp;
+                    input(type="radio", name="radKuja", value="11")
+                    | &nbsp;11&nbsp;&nbsp;
+                    input(type="radio", name="radKuja", value="12")
+                    | &nbsp;12&nbsp;&nbsp;
+        .div.va-bg-gray
+            .row
+                .col-md-4
+                    label(class='col-form-label font-weight-bold text-right', for='radBudha' style='padding-top:0px;') House of Budha : &nbsp;&nbsp;
+                    span &#9734;&#9734;&#9734;&#9734;&#9734;&#9734;
+                .col-md-8
+                    input(type="radio", name="radBudha" value="1")
+                    | &nbsp;1&nbsp;&nbsp;
+                    input(type="radio", name="radBudha", value="2")
+                    | &nbsp;2&nbsp;&nbsp;
+                    input(type="radio", name="radBudha", value="3")
+                    | &nbsp;3&nbsp;&nbsp;
+                    input(type="radio", name="radBudha", value="4")
+                    | &nbsp;4&nbsp;&nbsp;
+                    input(type="radio", name="radBudha", value="5")
+                    | &nbsp;5&nbsp;&nbsp;
+                    input(type="radio", name="radBudha", value="6")
+                    | &nbsp;6&nbsp;&nbsp;
+                    input(type="radio", name="radBudha", value="7")
+                    | &nbsp;7&nbsp;&nbsp;
+                    input(type="radio", name="radBudha", value="8")
+                    | &nbsp;8&nbsp;&nbsp;
+                    input(type="radio", name="radBudha", value="9")
+                    | &nbsp;9&nbsp;&nbsp;
+                    input(type="radio", name="radBudha", value="10")
+                    | &nbsp;10&nbsp;&nbsp;
+                    input(type="radio", name="radBudha", value="11")
+                    | &nbsp;11&nbsp;&nbsp;
+                    input(type="radio", name="radBudha", value="12")
+                    | &nbsp;12&nbsp;&nbsp;
+        .div.va-bg-gray
+            .row
+                .col-md-4
+                    label(class='col-form-label font-weight-bold text-right', for='radMoon' style='padding-top:0px;') House of Moon : &nbsp;&nbsp;
+                    span &#9734;&#9734;&#9734;&#9734;&#9734;&#9734;
+                .col-md-8
+                    input(type="radio", name="radMoon" value="1")
+                    | &nbsp;1&nbsp;&nbsp;
+                    input(type="radio", name="radMoon", value="2")
+                    | &nbsp;2&nbsp;&nbsp;
+                    input(type="radio", name="radMoon", value="3")
+                    | &nbsp;3&nbsp;&nbsp;
+                    input(type="radio", name="radMoon", value="4")
+                    | &nbsp;4&nbsp;&nbsp;
+                    input(type="radio", name="radMoon", value="5")
+                    | &nbsp;5&nbsp;&nbsp;
+                    input(type="radio", name="radMoon", value="6")
+                    | &nbsp;6&nbsp;&nbsp;
+                    input(type="radio", name="radMoon", value="7")
+                    | &nbsp;7&nbsp;&nbsp;
+                    input(type="radio", name="radMoon", value="8")
+                    | &nbsp;8&nbsp;&nbsp;
+                    input(type="radio", name="radMoon", value="9")
+                    | &nbsp;9&nbsp;&nbsp;
+                    input(type="radio", name="radMoon", value="10")
+                    | &nbsp;10&nbsp;&nbsp;
+                    input(type="radio", name="radMoon", value="11")
+                    | &nbsp;11&nbsp;&nbsp;
+                    input(type="radio", name="radMoon", value="12")
+                    | &nbsp;12&nbsp;&nbsp;
+        .div.va-bg-gray
+            .row
+                .col-md-4
+                    label(class='col-form-label font-weight-bold text-right', for='radGuru' style='padding-top:0px;') House of Guru : &nbsp;&nbsp;
+                    span &#9734;&#9734;&#9734;&#9734;&#9734;&#9734;
+                .col-md-8
+                    input(type="radio", name="radGuru" value="1")
+                    | &nbsp;1&nbsp;&nbsp;
+                    input(type="radio", name="radGuru", value="2")
+                    | &nbsp;2&nbsp;&nbsp;
+                    input(type="radio", name="radGuru", value="3")
+                    | &nbsp;3&nbsp;&nbsp;
+                    input(type="radio", name="radGuru", value="4")
+                    | &nbsp;4&nbsp;&nbsp;
+                    input(type="radio", name="radGuru", value="5")
+                    | &nbsp;5&nbsp;&nbsp;
+                    input(type="radio", name="radGuru", value="6")
+                    | &nbsp;6&nbsp;&nbsp;
+                    input(type="radio", name="radGuru", value="7")
+                    | &nbsp;7&nbsp;&nbsp;
+                    input(type="radio", name="radGuru", value="8")
+                    | &nbsp;8&nbsp;&nbsp;
+                    input(type="radio", name="radGuru", value="9")
+                    | &nbsp;9&nbsp;&nbsp;
+                    input(type="radio", name="radGuru", value="10")
+                    | &nbsp;10&nbsp;&nbsp;
+                    input(type="radio", name="radGuru", value="11")
+                    | &nbsp;11&nbsp;&nbsp;
+                    input(type="radio", name="radGuru", value="12")
+                    | &nbsp;12&nbsp;&nbsp;
+        .div.va-bg-gray
+            .row
+                .col-md-4
+                    label(class='col-form-label font-weight-bold text-right', for='radShukra' style='padding-top:0px;') House of Shukra : &nbsp;&nbsp;
+                    span &#9734;&#9734;&#9734;&#9734;&#9734;
+                .col-md-8
+                    input(type="radio", name="radShukra" value="1")
+                    | &nbsp;1&nbsp;&nbsp;
+                    input(type="radio", name="radShukra", value="2")
+                    | &nbsp;2&nbsp;&nbsp;
+                    input(type="radio", name="radShukra", value="3")
+                    | &nbsp;3&nbsp;&nbsp;
+                    input(type="radio", name="radShukra", value="4")
+                    | &nbsp;4&nbsp;&nbsp;
+                    input(type="radio", name="radShukra", value="5")
+                    | &nbsp;5&nbsp;&nbsp;
+                    input(type="radio", name="radShukra", value="6")
+                    | &nbsp;6&nbsp;&nbsp;
+                    input(type="radio", name="radShukra", value="7")
+                    | &nbsp;7&nbsp;&nbsp;
+                    input(type="radio", name="radShukra", value="8")
+                    | &nbsp;8&nbsp;&nbsp;
+                    input(type="radio", name="radShukra", value="9")
+                    | &nbsp;9&nbsp;&nbsp;
+                    input(type="radio", name="radShukra", value="10")
+                    | &nbsp;10&nbsp;&nbsp;
+                    input(type="radio", name="radShukra", value="11")
+                    | &nbsp;11&nbsp;&nbsp;
+                    input(type="radio", name="radShukra", value="12")
+                    | &nbsp;12&nbsp;&nbsp;
+        .div.va-bg-gray
+            .row
+                .col-md-4
+                    label(class='col-form-label font-weight-bold text-right', for='radShani' style='padding-top:0px;') House of Shani : &nbsp;&nbsp;
+                    span &#9734;&#9734;&#9734;&#9734;&#9734;&#9734;
+                .col-md-8
+                    input(type="radio", name="radShani" value="1")
+                    | &nbsp;1&nbsp;&nbsp;
+                    input(type="radio", name="radShani", value="2")
+                    | &nbsp;2&nbsp;&nbsp;
+                    input(type="radio", name="radShani", value="3")
+                    | &nbsp;3&nbsp;&nbsp;
+                    input(type="radio", name="radShani", value="4")
+                    | &nbsp;4&nbsp;&nbsp;
+                    input(type="radio", name="radShani", value="5")
+                    | &nbsp;5&nbsp;&nbsp;
+                    input(type="radio", name="radShani", value="6")
+                    | &nbsp;6&nbsp;&nbsp;
+                    input(type="radio", name="radShani", value="7")
+                    | &nbsp;7&nbsp;&nbsp;
+                    input(type="radio", name="radShani", value="8")
+                    | &nbsp;8&nbsp;&nbsp;
+                    input(type="radio", name="radShani", value="9")
+                    | &nbsp;9&nbsp;&nbsp;
+                    input(type="radio", name="radShani", value="10")
+                    | &nbsp;10&nbsp;&nbsp;
+                    input(type="radio", name="radShani", value="11")
+                    | &nbsp;11&nbsp;&nbsp;
+                    input(type="radio", name="radShani", value="12")
+                    | &nbsp;12&nbsp;&nbsp;
+    .form-group.row
+      label(class='col-md-2 col-form-label font-weight-bold text-right', for='txtPrediction' style='padding-top:0px;') Prediction :
+      .col-md-9
+        textarea.form-control(name='txtPrediction', id='txtPrediction', rows='8', autofocus=(!unknownUser).toString())
+    .form-group
+      .offset-md-2.col-md-8.p-1
+        button.btn.btn-primary(type='submit')
+          i.far.fa-envelope.fa-sm
+          | &nbsp; Send Content to CLOUD &nbsp;
+          i.fas.fa-cloud-showers-heavy
+    

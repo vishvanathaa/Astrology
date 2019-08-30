@@ -1,0 +1,18 @@
+extends layout
+
+block layout-content
+  div.View.UserView
+    h2.Banner Team uses AI & ML for prediction, #{userProfile.nickname}!
+    div.Message
+      div.Title
+        h3 Making Us the Best
+        h2 Horoscope Analysis Team
+      pre.Details=JSON.stringify(userProfile, null, 2)
+      a.btn.btn-raised(href='/zodiacSign', role='button') View Horoscope »
+    div.NavButtons
+      if isAuthenticated
+        a(href="/logout")
+          div.NavButton Log out
+      else
+        a(href="/logout")
+          div.NavButton not logged in

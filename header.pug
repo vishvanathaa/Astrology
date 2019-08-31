@@ -1,0 +1,171 @@
+.navbar.navbar-light.fixed-top.navbar-expand-lg.relative-ptn(style="position:relative;background-color:rgba(216,222,209)")
+    a.navbar-brand(href='/')
+    span.badge.badge-danger Austro Physics
+      span.sr-only Toggle navigation
+      span.navbar-toggler-icon
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li.nav-item(class=(title === 'Home') ? 'active' : undefined)
+          a.nav-link.fa.fa-home.va-margin-top-left(href='/') 
+        li.nav-item(class=(title === 'Artificial Intelligence') ? 'active' : undefined)
+          a.nav-link(href='/user') Study Team (AI)&nbsp;&nbsp;| 
+        li.nav-item(class=(title === 'Status') ? 'active' : undefined)
+          ul.nav.navbar-nav.ml-auto
+            li.dropdown.nav-item
+                a.dropdown-toggle.nav-link(href='#', data-toggle='dropdown') 
+                  i.fa.fa-database &nbsp;
+                  span Content Management
+                  i.caret
+                ul.dropdown-menu
+                  li.dropdown-item
+                    i.fa.fa-database &nbsp;&nbsp;
+                    a.va-hl-color(href='/manage') Add Birth Sign
+                  li.dropdown-item
+                    i.fa.fa-database &nbsp;&nbsp;
+                    a.va-hl-color(href='/horoscopeCollection') Horoscope
+                  li.dropdown-item
+                    i.fa.fa-database &nbsp;&nbsp;
+                    a.va-hl-color(href='/') Panchanga
+                  li.dropdown-item
+                    span &#9800;&nbsp;
+                    a.va-hl-color(href='/UpdateSign?sign=Aries' onclick='startSpinner()') Update Aries
+                  li.dropdown-item
+                    span &#9801;&nbsp;
+                    a.va-hl-color(href='/UpdateSign?sign=Taurus' onclick='startSpinner()') Update Taurus
+                  li.dropdown-item
+                    span &#9802;&nbsp;
+                    a.va-hl-color(href='/UpdateSign?sign=Gemini' onclick='startSpinner()') Update Gemini
+                  li.dropdown-item
+                    span &#9803;&nbsp;
+                    a.va-hl-color(href='/UpdateSign?sign=Cancer' onclick='startSpinner()') Update Cancer
+                  li.dropdown-item
+                    span &#9804;&nbsp;
+                    a.va-hl-color(href='/UpdateSign?sign=Leo' onclick='startSpinner()') Update Leo
+                  li.dropdown-item
+                    span &#9805;&nbsp;
+                    a.va-hl-color(href='/UpdateSign?sign=Virgo' onclick='startSpinner()') Update Virgo
+                  li.dropdown-item
+                    span &#9806;&nbsp;
+                    a.va-hl-color(href='/UpdateSign?sign=Libra' onclick='startSpinner()') Update Libra
+                  li.dropdown-item
+                    span &#9807;&nbsp;
+                    a.va-hl-color(href='/UpdateSign?sign=Scorpio' onclick='startSpinner()') Update Scorpio
+                  li.dropdown-item
+                    span &#9808;&nbsp;
+                    a.va-hl-color(href='/UpdateSign?sign=Sagattarius' onclick='startSpinner()') Update Sagattarius
+                  li.dropdown-item
+                    span &#9809;&nbsp;
+                    a.va-hl-color(href='/UpdateSign?sign=Capricorn' onclick='startSpinner()') Update Capricorn
+                  li.dropdown-item
+                    span &#9810;&nbsp;
+                    a.va-hl-color(href='/UpdateSign?sign=Aquarius' onclick='startSpinner()') Update Aquarius
+                  li.dropdown-item
+                    span &#9811;&nbsp;
+                    a.va-hl-color(href='/UpdateSign?sign=Pisces' onclick='startSpinner()') Update Pisces
+        li.nav-item(class=(title === 'Visualization') ? 'active' : undefined)
+          a.nav-link(href='/zodiacSign')
+            span | &nbsp; 
+            i.fa.fa-eye &nbsp;
+            span Visualization
+        li.nav-item(class=(title === 'Matrimony') ? 'active' : undefined)
+          a.nav-link(href='/matrimonyConsultation') 
+            span | &nbsp; 
+            i.fa.fa-user-circle &nbsp; 
+            span Matrimony Consultation
+        li.nav-item(class=(title === 'Research') ? 'active' : undefined)
+          ul.nav.navbar-nav.ml-auto
+            li.dropdown.nav-item
+                a.dropdown-toggle.nav-link(href='#', data-toggle='dropdown') 
+                  span &nbsp; | &nbsp;
+                  i.fas.fa-chart-bar(style='color: #FF6384') &nbsp; 
+                  span Research and Analysis 
+                  i.caret
+                ul.dropdown-menu
+                  li.dropdown-item
+                    i.fas.fa-chart-bar &nbsp;
+                    a.va-hl-color(href='/api/financialGrowth') Finance 
+                  li.dropdown-item
+                    i.fas.fa-chart-bar &nbsp;
+                    a.va-hl-color(href='/api/Chart') Education 
+                  li.dropdown-item
+                    i.fas.fa-chart-bar &nbsp;
+                    a.va-hl-color(href='/') Relation 
+        li.nav-item(class=(title === 'Vastu') ? 'active' : undefined)
+          ul.nav.navbar-nav.ml-auto
+            li.dropdown.nav-item
+                a.dropdown-toggle.nav-link(href='#', data-toggle='dropdown') 
+                  span &nbsp; | &nbsp;&nbsp;
+                  i.fa.fa-university &nbsp;
+                  span Vastu
+                  i.caret
+                ul.dropdown-menu
+                  li.dropdown-item
+                    i.fa.fa-home &nbsp;
+                    a.va-hl-color(href='/') House
+                  li.dropdown-item
+                    i.fa.fa-star &nbsp;
+                    a.va-hl-color(href='/') Office 
+                  li.dropdown-item
+                    i.fa.fa-university &nbsp;
+                    a.va-hl-color(href='/') Bank 
+                  li.dropdown-item
+                    i.fa.fa-university &nbsp;
+                    a.va-hl-color(href='/') School
+                  li.dropdown-item
+                    i.fa.fa-university &nbsp;
+                    a.va-hl-color(href='/') Institution
+                  li.dropdown-item
+                    i.fa.fa-bell &nbsp;
+                    a.va-hl-color(href='/') Temple
+                  li.dropdown-item
+                    i.fa.fa-tag &nbsp;
+                    a.va-hl-color(href='/') Apartment
+        li.nav-item(class=(title === 'Pooja') ? 'active' : undefined)
+          ul.nav.navbar-nav.ml-auto
+            li.dropdown.nav-item
+                a.dropdown-toggle.nav-link(href='#', data-toggle='dropdown') 
+                  span &nbsp; | &nbsp;&nbsp;
+                  i.fa.fa-bell &nbsp;
+                  span Online Services
+                  i.caret
+                ul.dropdown-menu
+                  li.dropdown-item
+                    i.fa.fa-bell &nbsp;
+                    a.va-hl-color(href='/') Ganapathy Pooja
+                  li.dropdown-item
+                    i.fa.fa-star &nbsp;
+                    a.va-hl-color(href='/api/Chart') Flowers To Home 
+                  li.dropdown-item
+                    i.fa.fa-bell &nbsp;
+                    a.va-hl-color(href='/') Maha Lakhmi Pooja
+                  li.dropdown-item
+                    i.fa.fa-tag &nbsp;
+                    a.va-hl-color(href='/') Saraswathi Pooja
+        li.nav-item(class=(title === 'Pricing') ? 'active' : undefined)
+          a.nav-link(href='/matrimonyConsultation') 
+            span | &nbsp; 
+            b &#8377; &nbsp;
+            span Pricing
+        
+      ul.nav.navbar-nav.ml-auto
+        if !user
+          li.nav-item(class=(title === 'Login') ? 'active' : undefined)
+            a.nav-link(href='/login') Login
+          li.nav-item(class=(title === 'Create Account') ? 'active' : undefined)
+            a.nav-link(href='/logout') Logout
+        else
+          li.dropdown(class=(title === 'Account Management') ? 'active' : undefined).nav-item
+            a.dropdown-toggle.nav-link(href='#', data-toggle='dropdown')
+              if user.profile.picture
+                img(src=user.profile.picture)
+              else
+                img(src=user.gravatar(60))
+              span= user.profile.name || user.email || user.id
+              i.caret
+            ul.dropdown-menu
+              li.dropdown-item
+                a(href='/account') My Account
+              li.divider.dropdown-item
+              li.dropdown-item
+                a.fa.fa-eject(href='/logout') Logout
+              

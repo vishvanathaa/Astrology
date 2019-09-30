@@ -1,0 +1,130 @@
+extends layout
+block layout-content
+    .row.mt-5
+        .col-md-6.mt-2.ml-1(style='font-size:18px;')
+            a(href="/cartItems" type="button" class="btn btn-warning") &nbsp; 
+                h7 My Cart &nbsp;
+                i.fa.fa-shopping-cart(style='color:black;font-size:20px') &nbsp;
+                span.badge.badge-pill.badge-success #{session.cart ? session.cart.totalItems : 0}
+        .col-md-6
+            .row.ml-1(style='margin-right:0px;')
+                .col-md-10
+                .col-md-2
+    each item,k in products
+        .row
+            .col-md-3
+                .row.ml-1.mt-2.Message
+                        .col-md-12
+                            .thumbnail
+                                .caption
+                                    .row
+                                        .col-md-12.text-right.va-offerTag
+                                            span GET 10% OFFER &nbsp;
+                                            i.fa.fa-asterisk
+                                    .row
+                                        .col-md-6
+                                            h4 #{item.title}
+                                        .col-md-6.text-right
+                                            i.badge.badge-success 4.1 
+                                                i.fa.fa-star
+                                    p.description !{item.description}
+                                    if k == 1
+                                        img.clsSign.ml-2#zodiac(src="images/whiteThread.jpg" alt="Sagattarius")
+                                    else
+                                        img.clsSign.ml-2#zodiac(src="images/nagchamap_4.jpg" alt="Sagattarius")
+                                    div.clearfix
+                                    div.price.pull-left
+                                        i.fa.fa-tag(aria-hidden="true" style="font-size:20px;") &nbsp;&nbsp;&#x20B9;&nbsp;#{item.price}
+                                        .row
+                                            .col-md-12.text-right
+                                                a(href="/add/"+item.id)
+                                                    button.btn.btn-warning.pull-right.text-right(href="/add/"+item.id role="button",style="font-size:13px;")
+                                                        i.fa.fa-shopping-cart(aria-hidden="true") &nbsp;&nbsp;  
+                                                        strong ADD TO CART
+        
+            .col-md-3
+                .row.ml-1.mt-2.Message
+                        .col-md-12
+                            .thumbnail
+                                .caption
+                                    .row
+                                    .col-md-12.text-right.va-offerTag
+                                            span GET 10% OFFER &nbsp;
+                                            i.fa.fa-asterisk
+                                    .row
+                                        .col-md-6
+                                            h4 #{item.title}
+                                        .col-md-6.text-right
+                                            i.badge.badge-success 4.1 
+                                                i.fa.fa-star
+                                    p.description !{item.description}
+                                    img.clsSign.ml-2#zodiac(src="images/Diya.jpg" alt="Sagattarius")
+                                    div.clearfix
+                                    div.price.pull-left
+                                        i.fa.fa-tag(aria-hidden="true" style="font-size:20px;") &nbsp;&nbsp;&#x20B9;&nbsp;#{item.price}
+                                        .row
+                                            .col-md-12.text-right
+                                                a(href="/add/"+item.id)
+                                                    button.btn.btn-warning.pull-right.text-right(href="/add/"+item.id role="button",style="font-size:13px;")
+                                                        i.fa.fa-shopping-cart(aria-hidden="true") &nbsp;&nbsp; 
+                                                        strong ADD TO CART
+                            
+            .col-md-3
+                .row.ml-1.mt-2.Message
+                        .col-md-12
+                            .thumbnail
+                                .caption
+                                    .row
+                                        .col-md-12.text-right.va-offerTag
+                                            span GET 10% OFFER &nbsp;
+                                            i.fa.fa-asterisk
+                                    .row
+                                        .col-md-6
+                                            h4 #{item.title}
+                                        .col-md-6.text-right
+                                            i.badge.badge-success 4.1 
+                                                i.fa.fa-star
+                                    p.description !{item.description}
+                                    img.clsSign.ml-2#zodiac(src="images/Diya.jpg" alt="Sagattarius")
+                                    div.clearfix
+                                    div.price.pull-left
+                                        i.fa.fa-tag(aria-hidden="true" style="font-size:20px;") &nbsp;&nbsp;&#x20B9;&nbsp;#{item.price}
+                                        .row
+                                            .col-md-12.text-right
+                                                a(href="/add/"+item.id)
+                                                    button.btn.btn-warning.pull-right.text-right(href="/add/"+item.id role="button",style="font-size:13px;")
+                                                        i.fa.fa-shopping-cart(aria-hidden="true") &nbsp;&nbsp; 
+                                                        strong ADD TO CART
+            if k == 0
+                .col-md-3.d-none.d-lg-block
+                    div.fixed-top.mt-5(style='width:23%;margin-left:76%;padding-top:38px;')
+                        .row.ml-1.mt-2.card.mr-0(style='max-height:780px;overflow-y:auto')
+                            div.card-body.va-cart
+                                h5.card-title Items in cart (#{session.cart?session.cart.totalItems : 0})
+                                ul.list-group
+                                    each val in cartProducts
+                                        li.list-group-item.clearfix.va-cart-item.mt-1
+                                            .col-xs-6
+                                                strong #{ val.item.title } &nbsp;&nbsp;&nbsp;&nbsp;
+                                                a(href="/remove/"+val.item.id class="btn btn-default")
+                                                    i.fa.fa-times-circle
+                                                br
+                                                em !{val.item.description}
+                                            .col-xs-5.text-right
+                                                button(type="button") -
+                                                input(type="text" value="2" style='width:20px;text-align:center')
+                                                button(type="button") +
+                                                span &nbsp;&nbsp;&nbsp;
+                                                span.badge.badge-pill.badge-secondary #{ val.quantity }
+                                                span &nbsp;&nbsp;&#8377;&nbsp;#{ val.price }
+                                            .col-xs-1.text-right
+                                div.text-right.va-cart-total.mt-1
+                                    strong.mr-2 Sub Total :&nbsp;&nbsp;&#8377; #{totalPrice}
+                                    br
+                                    span.mr-2 Delivery Charges  **
+                                hr
+                                div.text-right
+                                    if session.cart
+                                        a(href="#" type="button" class="btn btn-success") Procceed to checkout &nbsp;
+                                            i.fa.fa-arrow-circle-right
+    

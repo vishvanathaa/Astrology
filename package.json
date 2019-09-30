@@ -1,0 +1,44 @@
+{
+  "name": "nous-demo-portal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.10.1",
+    "browser-sync": "^2.26.7",
+    "nodemon": "^1.19.1"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.21",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.3.1",
+    "bootstrap3-dialog": "^1.35.4",
+    "cli-spinner": "^0.2.10",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "express-flash": "0.0.2",
+    "express-session": "^1.16.2",
+    "jqgrid": "^4.6.4",
+    "jquery": "^3.4.1",
+    "jsdom": "^15.1.1",
+    "loading-spinner": "^1.2.1",
+    "modal-dialog": "^1.6.3",
+    "moment": "^2.24.0",
+    "mongodb": "^3.3.0",
+    "nedb": "^1.8.0",
+    "nodemailer": "^6.3.0",
+    "passport": "^0.4.0",
+    "passport-auth0": "^1.2.0",
+    "paypal-rest-sdk": "^1.8.1",
+    "popper": "^1.0.1",
+    "popper.js": "^1.15.0",
+    "pug": "^2.0.4",
+    "validator": "^11.1.0"
+  }
+}

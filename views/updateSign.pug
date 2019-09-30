@@ -1,0 +1,27 @@
+extends layout
+
+block layout-content
+  .pb-2.mt-3.mb-3.ml-20
+      h3.va-ml-17=sign
+  form(method='POST')
+    .form-group.row
+        label(class='col-md-2 col-form-label font-weight-bold text-right', style='padding-top:0px;' for='signType') Month :
+        .col-md-6
+          select(name='ddlMonth', id='ddlMonth')
+           each val in ['-- Select --' , 'January' , 'February','March','April','May','June','July','August','September','October','November','December']
+            option(value=val)=val
+          label(class='col-md-2 col-form-label font-weight-bold text-right', style='padding-top:0px;' for='signType') Year :
+          select(name='ddlYear', id='ddlYear')
+           each year in ['-- Select --' , '2019' , '2020','2021','2022','2023']
+            option(value=year)=year
+    .form-group.row
+      input(type='hidden', name='signName',id='signName', value=sign)
+      label(class='col-md-2 col-form-label font-weight-bold text-right', for='message' style='padding-top:0px;') Description :
+      .col-md-9
+        textarea.form-control(style="font-size: 0.699rem!important;",name='message', id='message', rows='30', autofocus=(!unknownUser).toString())=description
+    .form-group
+      .offset-md-2.col-md-8.p-1
+        button.btn.btn-primary(type='submit')
+          i.far.fa-envelope.fa-sm
+          | &nbsp; Send Content to CLOUD &nbsp;
+          i.fas.fa-cloud-showers-heavy

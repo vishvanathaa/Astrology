@@ -1,0 +1,444 @@
+/*@import url("https://fonts.googleapis.com/css?family=Raleway:800|Merriweather+Sans|Share+Tech+Mono");*/
+
+:root {
+  --logo-font: "Share Tech Mono", monospace;
+  --header-font: "Raleway", sans-serif;
+  --core-font: "Merriweather Sans", sans-serif;
+
+  --primary: #ffffff;
+  --secondary: #2a3747;
+
+  --highlight: #fa4141;
+
+  --ui-shawdow: 0 2px 4px -1px rgba(0, 0, 0, 0.06),
+    0 4px 5px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.08);
+  fill: rgba(0, 0, 0, 0.54);
+  --ui-shawdow-border: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  /*height: 98%;*/
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  font-size: 0.699rem!important;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--header-font);
+  text-transform: uppercase;
+  font-size: 30px!important;
+  padding: 0;
+  margin: 0;
+  font-weight: 900;
+  color: var(--secondary);
+}
+h4 {
+  font-family: var(--header-font);
+  /*text-transform: uppercase;*/
+  font-size: 15px!important;
+  padding: 0;
+  margin: 0;
+  font-weight: 900;
+  color: var(--secondary);
+}
+h5
+{
+  font-family: var(--header-font);
+  /*text-transform: uppercase;*/
+  font-size: 15px!important;
+  padding: 0;
+  margin: 0;
+  font-weight: 900;
+  color: var(--secondary);
+}
+a {
+  color:inherit;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+}
+.va-hl-color
+{
+  color: rgb(17, 17, 17) !important;
+}
+.va-ml-17
+{
+  margin-left: 225px !important;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+.View {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  
+  height: 100%;
+  width: 100%;
+
+  padding-top:  20px; 
+  padding-bottom:  20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-size: cover;
+
+  font-family: var(--core-font);
+  transition: box-shadow .25s web-kit-box-shadow .25s;
+}
+.WelcomeView {
+    background: url("images/dev-food.jpg") left bottom;
+    background-size: cover;
+  }
+.UserView {
+    background: url("images/team.jpg") left bottom;
+    background-size: cover;
+  }
+  .zodiac {
+    background-image: url("images/ARIES.png") left bottom;
+    
+  }
+.Banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+
+  border-radius: 5px;
+
+  overflow: hidden;
+  background: white;
+  padding: 15px;
+
+  font-family: var(--logo-font);
+
+  border-bottom: var(--ui-shawdow-border);
+  box-shadow: var(--ui-shawdow);
+}
+
+.Message {
+  background: rgba(255,255,255,0.9);
+  padding: 20px;
+  border-bottom: var(--ui-shawdow-border);
+  box-shadow: var(--ui-shawdow);
+  border: 0.02rem solid rgb(192, 187, 187);
+  border-radius: 5px;
+}
+
+.Message > .Title {
+  padding-bottom: 20px;
+}
+
+.Message > .Details {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5em;
+}
+
+.va-offerTag {
+  background: rgba(255,255,255,0.9);
+  padding: 5px;
+  align-content:right;
+  border-bottom: var(--ui-shawdow-border);
+  box-shadow: var(--ui-shawdow);
+  border: 0.0001rem solid rgb(192, 187, 187);
+  border-radius: 0px;
+  color:rgb(236, 65, 65);
+}
+.va-cart-item {
+  background: rgba(255,255,255,0.9);
+  padding: 5px;
+  align-content:right;
+  border-bottom: var(--ui-shawdow-border);
+  box-shadow: var(--ui-shawdow);
+  border: 0.0001rem solid rgb(192, 187, 187);
+  border-radius: 0px;
+}
+
+.va-cart-total {
+  background: rgba(255,255,255,0.9);
+  padding: 5px;
+  align-content:right;
+  border: 0.0001rem solid rgb(192, 187, 187);
+  border-radius: 0px;
+  font-size: 15px;
+}
+.va-cart
+{
+  background-color: rgb(246, 247, 243);
+  padding-right: 2px;
+}
+.va-ord-summary
+{
+  background-color:rgb(243, 241, 241);
+  padding: 2px;
+  border: 0px solid gray;
+}
+.va-font-15
+{
+  font-size: 15px;
+}
+a:hover { 
+  background-color:rgb(236, 238, 241);
+  border-radius: 0px;
+}
+.va-basket-item
+{
+    background: rgba(255,255,255,0.9);
+    border: 0.001rem solid rgb(192, 187, 187);
+    background-color: rgb(246, 247, 243);
+    opacity: 0.8;
+    margin-right: 0px;
+}
+.va-basket-item a:hover {
+  opacity: 0.8;
+  border-radius: 60% !important;
+  border: 0.001rem solid rgb(192, 187, 187);
+}
+.NavButtons {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.NavButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 55px;
+  width: 150px;
+
+  background: var(--highlight);
+
+  border-radius: 30px;
+
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+
+  text-transform: capitalize;
+
+  border-bottom: var(--ui-shawdow-border);
+  box-shadow: var(--ui-shawdow);
+}
+.tableStl
+{
+    background-color: white;
+}
+.imageAlign
+{
+  vertical-align: top;
+  margin-left: 20px;
+}
+.margin-top-40
+{
+  margin-top:20px;
+  margin:10px;
+}
+.relative-ptn
+{
+  position: relative;
+}
+.va-spinner
+{
+  width: 140px;
+  position:relative;
+  border-radius: 50%;
+  height: 140px;
+  display: block;
+  background: white;
+  padding: 20px;
+  border-color: gray;
+  border: var(--ui-shawdow-border);
+  box-shadow: var(--ui-shawdow);
+  opacity: 1;
+  border: 3px dotted red;
+  background: rgb(239, 245, 186);
+}
+.va-spinner-o
+{
+  width: 140px;
+  position:absolute;
+  margin-top: 300px;
+  margin-left: 300px;
+  border-radius: 50%;
+  height: 140px;
+  display: block;
+  background: white;
+  padding: 30px;
+  border-color: gray;
+  border: var(--ui-shawdow-border);
+  box-shadow: var(--ui-shawdow);
+  opacity: 1;
+  border: 3px dotted red;
+  background: rgb(239, 245, 186);
+}
+.va-location
+{
+  margin-left:45px;
+  margin-top:42px;
+}
+.va-padding
+{
+  padding: 30px;
+}
+.dropdown-menu
+{
+  font-size: 0.8rem !important;
+}
+.va-margin-top-left
+{
+  margin-top:3px;
+  margin-left:5px;
+}
+.va-bc-bl
+{
+  border-color: rgb(20, 20, 20);
+}
+.va-bg-gray
+{
+  margin-top: 3px !important;
+  background: #F3F3F4;
+  padding-top: 8px;
+  padding-left: 8px;
+  border-radius: 5px;
+}
+.va.bg-color
+{
+  /*background-color:yellow;*/
+  border-radius:8px;
+  background: #F3F3F4;
+  border: 1px solid #ccc;
+}
+.va.padding-left-20
+{
+  padding-left:20px;
+}
+.va-margin-top-8
+{
+  margin-top: 8px;
+}
+.va-icon-font-size
+{
+  font-size: 0.799rem !important;
+}
+.va-validator-font-size
+{
+  font-size: 0.999rem !important;
+  font-weight: normal !important;
+}
+.va-container-hight
+{
+  height: calc(100vh - 110px);
+}
+* {
+/*  margin: 0;
+  padding: 0;*/
+  box-sizing: border-box;
+}
+
+/*html {
+  height: 100%;
+}*/
+.dropdown-menu .cart {
+  min-width: 250px;
+  padding: 15px 25px 0;
+}
+
+.dropdown-menu .cart .row > div {
+  padding: 0 0 10px 0;
+}
+
+.dropdown-menu .cart .totalPrice{
+  font-size: 100%;
+  font-weight: bold;
+  padding: 15px 0;
+}
+
+.cart.page {
+  padding: 25px 0;
+}
+.cart.page {
+  padding: 25px 0;
+}
+.dvInsideTL {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 300px;
+  height: 100px;
+}
+.va-sticky
+{
+  position: -webkit-sticky; /* Safari & IE */
+  position: sticky;
+  top: 0;
+}
+.va-mt-20
+{
+  margin-top: 60px;
+}
+.va-mt-10
+{
+  margin-top : 4rem;
+}
+.va-mt-4
+{
+  margin-top : 4rem;
+}
+.va-card {
+  float: left;
+  width: 39px;
+  height: 25px;
+  text-indent: -9999px;
+  background-position: 0 0;
+  margin-right: 4px;
+}
+.va-cards {
+  margin: 10px 0;
+  height: 25px;
+}
+.va-card.visa {
+  background-image: url("/images/card-visa.gif");
+}
+.va-card.amex {
+  background-image: url("/images/card-amex.gif");
+}
+.va-card.master {
+  background-image: url("/images/card-mastercard.gif");
+}
+.va-card.discover {
+  background-image: url("/images/card-discover.gif");
+}
+.va-card.jcb {
+  background-image: url("/images/card-jcb.gif");
+}
+.va-card.diners_club {
+  background-image: url("/images/card-diners.gif");
+}

@@ -1,0 +1,43 @@
+extends layout
+block layout-content
+  .row.mt-5
+    .col-md-6.col-sm-12
+      h3.mt-1 Horoscope List
+    .col-md-6.col-sm-12.text-right
+      a(href="/horoscope")
+        button.btn.btn-primary.mt-1(type='submit')
+          i.fa.fa-plus-circle
+          | &nbsp; Add Horoscope &nbsp;
+  .row
+    .col-md-12
+      table.table.table-striped.table-bordered.table-sm(id='tblHoroscope',cellspacing="0" width="100%")
+        thead
+          tr
+            th.d-none Id
+            th.text-center Symbol
+            th Sign
+            th Star
+            th Planet
+            th Prediction
+            th.text-center Edit
+            th.text-center Delete
+        tbody
+          each item in horoscopeList
+            tr
+              td.d-none #{item._id}
+              td.text-center !{item.icon}
+              td #{item.sign}
+              td #{item.star}
+              td #{item.planet}
+              td #{item.prediction.slice(0,25)} ...
+              td.text-center
+                a(href="/horoscope")
+                  span Edit
+              td.text-center
+                a(href="/horoscope")
+                  span Remove
+      script.
+          $('#tblHoroscope').DataTable();
+          $('.dataTables_length').addClass('bs-select');
+    
+  

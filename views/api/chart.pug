@@ -1,0 +1,29 @@
+extends ../layoutN
+block head
+  script(src='/js/lib/Chart.min.js')
+block layout-content
+  .pb-2.mt-2.mb-2.mt-5.border-bottom
+    h2.va-mt-4
+      p.ml-3.mb-0 Education
+    .ml-3.mt-2.mb-2.mr-3
+        p 
+          b How to predict education through astrology: I: 
+          span In Vedic Astrology Jupiter or Guru is always considered as a “karaka” or significator of education & knowledge. When this knowledge giver Guru is placed in Trine (1st, 5th, 9th) or angle (1st, 4th, 7th, 10th) with the owner of fifth or fourth house, it brings good result in the matter of education or studies.
+        p 
+          b Mercury denotes intelligence 
+          span To get a real love really you have to be enough lucky, because it is so rare nowadays that you can compare with water in desert. Now you can ask me that so what about them whom we see everyday in the park, discos, pubs and so many places walking together, having food together and sharing their everything with each other? If those couple are not in love so what they are doing? In my word, maximum of them are just maintaining a relationship which is based on ‘give and take’ policy, based on some conditions, sometimes it may be related to your look or money or how successful you are etc. And believe me dear, where there is ‘condition’ love can not exist there. Now you can think what the hell is this ‘Love’ can be unconditional also! Yes, real love is totally unconditional and only knows to give, do not expect anything in return. I have seen so many love marriages, they had maintained a relationships of several years and after that, they got married and just within one year of marriage they appealed for divorce in the court. Do you know why it had happened? Because they didn’t know but their relationships were based on ‘give and take policy’ only.
+  .container
+    .mt-2.mb-4.text-left
+      div(style='width:100%; height:80%; margin: 0 auto;align:left;')
+        canvas#chart
+  script.
+    var rData = !{radarData};
+    var ctx = document.getElementById('chart').getContext('2d');
+    var myRadarChart = new Chart(ctx, {
+    type: 'radar',
+    data: rData,
+    options: {
+      responsive:true,
+      maintainAspectRatio: true
+    }
+    });

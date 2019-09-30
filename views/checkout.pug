@@ -1,0 +1,312 @@
+extends layout
+
+block layout-content
+  .row.mt-4
+    .col-md-9
+        .row.card.mt-5.ml-2
+            .card-header.mb-0(style="height:120px;")
+                h5.align-top
+                    i.fa.fa-address-book(aria-hidden="true") &nbsp; Delivery Address
+                .row
+                    .col-md-6
+                        span Vishvanatha Achary (9980022445)
+                        br
+                        span #151/19 APARTMENT NAME
+                        br
+                        span 3rd main 4th cross, Landmark location 
+                        br
+                        span Area details, Bangalore - 560100
+                    .col-md-6.text-right
+                        input(type="button",value="CHANGE ADDRESS",data-toggle="collapse", data-target="#address")
+            .card-body#address.col-md-12.collapse(class=(title === 'Check out1') ? 'show' : undefined)
+                p.card-text
+                    form
+                        .row
+                            .col-md-4
+                                .form-group
+                                    label(for="txtfirstName") First Name :
+                                    input.form-control.input-sm.col-md-12(autofocus,type="text",name="txtfirstName",id="txtfirstName",placeholder="First name")
+                            .col-md-4
+                                .form-group
+                                    label(for="txtLastName") Last Name :
+                                    input.form-control.col-md-12(type="text",name="txtLastName",id="txtLastName",placeholder="Last name")
+                            .col-md-4
+                                .form-group
+                                    label(for="txtContactNo") Contact No. :
+                                    input.form-control.col-md-12(type="text",name="txtContactNo",id="txtContactNo",placeholder="Contact no.")
+                        .row
+                            .col-md-4
+                                .form-group
+                                    label(for="txtHouseNo") House No. :
+                                    input.form-control.col-md-12(type="text",name="txtHouseNo",id="txtHouseNo",placeholder="House No.")
+                            .col-md-8
+                                .form-group
+                                    label(for="txtApartmentName") Apartment Name :
+                                    input.form-control.col-md-12(type="text",name="txtApartmentName",id="txtApartmentName",placeholder="Apartment name")
+                        .row
+                            .col-md-6
+                                .form-group
+                                    label(for="txtStreet") Street Details :
+                                    input.form-control.col-md-12(type="text",name="txtStreet",id="txtStreet",placeholder="Street details")
+                            .col-md-6
+                                .form-group
+                                    label(for="txtLandmark") Landmark for easy reach out :
+                                    input.form-control.col-md-12(type="text",name="txtLandmark",id="txtLandmark",placeholder="Landmark")
+                        .row
+                            .col-md-3
+                                .form-group
+                                    label(for="ddlCity") City :
+                                    select.form-control(name='ddlCity', id='ddlCity')
+                                        each val in ['Bangalore' , 'Mangalore' , 'Udupi','Gemini','Cancer','Leo','Virgo','Libra','Scorpio','Sagittarius','Capricorn','Aquarius','Pisces']
+                                            option(value=val)=val 
+                            .col-md-6
+                                .form-group
+                                    label(for="txtAreaDetails") Area Details :
+                                    input.form-control.col-md-12(type="text",name="txtAreaDetails",id="txtAreaDetails",placeholder="Area Details")  
+                            .col-md-3
+                                .form-group
+                                    label(for="txtCity") Pin Code :
+                                    input.form-control.col-md-12(type="text",name="txtPinCode",id="txtPinCode",placeholder="Pin code")
+                        .row
+                            .col-md-3
+                                span Choose nick name for this address
+                        .row
+                            .col-md-6
+                                .btn-group.btn-group-toggle(data-toggle="buttons")
+                                    label.btn.btn-outline-primary.btn-toggle.active(style="font-size:0.65rem")  
+                                        input(type="radio", name="addressType", id="option1", autocomplete="off" style="font-size:10px") 
+                                        span Home
+                                    label.btn.btn-outline-primary.btn-toggle(style="font-size:0.65rem") 
+                                        input(type="radio", name="addressType", id="option2", autocomplete="off" style="font-size:10px") 
+                                        span Office
+                                    label.btn.btn-outline-primary.btn-toggle(style="font-size:0.65rem") 
+                                        input(type="radio", name="addressType", id="option3", autocomplete="off" style="font-size:10px") 
+                                        span Other
+                                    
+                        .row
+                            .col-md-3.mt-3
+                              button.btn.btn-warning.mt-1(type='submit' style="font-size:12px")
+                                i.fa.fa-plus-circle
+                                | &nbsp; ADD ADDRESS &nbsp;   
+        .row.card.mt-1.ml-2
+            .card-header
+                .row.mb-0
+                    .col-md-6
+                        h5
+                            i.fa.fa-gift(aria-hidden="true") &nbsp; Is this a gift order?
+                    .col-md-6.text-right
+                        input(type="button",value="ADD MESSAGE",data-toggle="collapse", data-target="#address")
+            .col-md-12.card-body.collapse
+                
+        .row.card.mt-1.ml-2
+            .card-header
+                h5
+                    i.fa.fa-truck(aria-hidden="true") &nbsp; Delivery Options
+            .col-md-12.card-body.collapse(class=(sectionType === 'delivery') ? 'show' : undefined)
+                p.cart-text
+                    form
+                        .form-check
+                            .form-check-label
+                                input.form-check-input(type="radio",name="radDeliveryOption",checked,value="1")
+                            h5 Default Delivery Option &nbsp;&nbsp;
+                                span(style="font-size:12px;") 1 shipment, Delivery Charge : &nbsp;&#8377;&nbsp;30&nbsp;
+                                    i.fa.fa-bicycle
+                            .deliveryOptions#radDeliveryOption1
+                                .row.shadow-none.p-2.mb-2.mt-3.bg-light(style="font-size:12px;color:var(--secondary);")
+                                        .col-md-4
+                                            i.fa.fa-truck &nbsp;
+                                            span Shipment 1: Standard Delivery
+                                        .col-md-3
+                                            span 
+                                                u 4 Items 
+                                                span &nbsp; @ &#8377; &nbsp;900
+                                            br
+                                            span Delivery Charge : &#8377;&nbsp;30 &nbsp;&#9432;
+                                        .col-md-5.mt-2
+                                            span.border.p-2 &nbsp;&#128344;&nbsp; TOMORROW 9:30 AM TO 12:00 PM
+                            .form-check-label
+                                input.form-check-input(type="radio",name="radDeliveryOption",value="2")
+                            h5 Delivery Option 2 &nbsp;&nbsp;
+                                span(style="font-size:12px;") 2 shipments, Delivery Charge : &nbsp;&#8377;&nbsp;80&nbsp;
+                                    i.fa.fa-motorcycle
+                            .deliveryOptions.collapse#radDeliveryOption2    
+                                .row.shadow-none.p-2.mt-2.mb-0.bg-light(style="font-size:12px;color:var(--secondary);")
+                                    .col-md-4
+                                        i.fa.fa-motorcycle &nbsp;
+                                        span Shipment 1: Express Delivery
+                                    .col-md-3
+                                        span 
+                                            u 3 Items 
+                                            span &nbsp; @ &#8377; &nbsp;681
+                                        br
+                                        span Delivery Charge : &#8377;&nbsp;30&nbsp;&#9432;
+                                    .col-md-5.mt-2
+                                        span.border.p-2 &nbsp;&#128344;&nbsp; TODAY WITHIN NEXT 90 MINUTES
+                                .row.shadow-none.p-2.mb-0.mt-3.bg-light(style="font-size:12px;color:var(--secondary);")
+                                    .col-md-4
+                                        i.fa.fa-truck &nbsp;
+                                        span Shipment 2: Standard Delivery
+                                    .col-md-3
+                                        span 
+                                            u 1 Item 
+                                            span &nbsp; @ &#8377; &nbsp;219
+                                        br
+                                        span Delivery Charge : &#8377;&nbsp;80&nbsp;&#9432;
+                                    .col-md-5.mt-2
+                                        span.border.p-2 &nbsp;&#128344;&nbsp; TOMORROW 9:30 AM TO 12:00 PM
+                            .form-check-label.text-right.mt-1
+                                a(href="/checkout" type="button" class="btn btn-success") PROCEED TO PAYMENT &nbsp;
+                                    i.fa.fa-arrow-circle-right
+
+        .row.card.mt-1.ml-2
+            .card-header
+                .row.mb-0
+                    .col-md-6
+                        h5
+                            i.fa.fa-credit-card(aria-hidden="true") &nbsp; Payment Options
+                    .col-md-6.text-right
+                        input(type="button",value="ADD MESSAGE",data-toggle="collapse", data-target="#address")
+            .col-md-12.card-body
+                p.card-text
+                    form.ml-3.needs-validation(novalidate ,method="POST",data-toggle="validator",role="form")
+                        .form-check
+                            .form-check-label
+                                input.form-check-input(type="radio",name="radPaymentOption",checked,value="1")
+                            span Credit/Debit/ATM Card &nbsp;&nbsp;
+                            div.border.p-4.mt-3.rounded.shadow.col-md-9
+                                    .row
+                                        .col-md-12.text-right
+                                            ul.va-cards.list-unstyled.list-group.list-group-horizontal.float-right
+                                                li
+                                                    span.va-card.visa(title="visa")  
+                                                li
+                                                    span.va-card.master(title="master card")      
+                                                li
+                                                    span.va-card.amex(title="visa")
+                                                li
+                                                    span.va-card.discover(title="visa")
+                                                li
+                                                    span.va-card.jcb(title="visa")
+                                                li
+                                                    span.va-card.diners_club(title="visa") 
+                                    .row
+                                        .col-md-12
+                                            label(for="cardName") Name on the card
+                                            .input-group
+                                                .input-group-prepend
+                                                    span.input-group-text
+                                                        i.fa.fa-user
+                                                input.form-control(autofocus,id="cardName",name="cardName",type="text", placeholder="" required="")                                
+                                                .invalid-feedback Please enter name of the card.
+                                    .row.mt-3
+                                        .col-md-12
+                                            label(for="cardNumber") Card Number
+                                            .input-group
+                                                .input-group-prepend
+                                                        span.input-group-text
+                                                            i.fa.fa-credit-card
+                                                input.form-control(id="cardNumber",name="cardNumber",placeholder="0000 0000 0000 0000",pattern="[0-9]{16}", min="0", value="",required,maxlength="16",data-value-missing="Translate('Required')", data-pattern-mismatch="Translate('Invalid card')")
+                                                .invalid-feedback Invalid card number
+                                    .row.mt-3
+                                        .col-md-8
+                                            label(for="valid-thru") Expiration
+                                            div.form-inline
+                                                select.form-control(style="width:45%",required)
+                                                    option(disabled,selected,value="") MM
+                                                    option 01
+                                                    option 02
+                                                    option 03
+                                                span(style="width:10%, text-align=center") &nbsp;&nbsp;    
+                                                select.form-control(style="width:45%",required)
+                                                    option(disabled,selected,value="") YY
+                                                    option 2018
+                                                    option 2019
+                                                    option 2020
+                                               
+                                        .col-md-4
+                                            label(for="cvvNumber") CVV &nbsp;
+                                                i.fa.fa-question-circle
+                                            .input-group
+                                                .input-group-prepend
+                                                        span.input-group-text
+                                                            i.fa.fa-lock
+                                                input.form-control(id="cvvNumber",name="cvvNumber",pattern="[0-9]{3}",required="",maxlength="3")
+                                    .row
+                                        .col-md-12.text-right.mt-3
+                                           button.btn.btn-success(type="submit") PAY NOW (&#8377; #{session.cart.totalPrice + 30})
+                            .form-check.mt-4
+                            .form-check-label
+                                input.form-check-input(type="radio",name="radPaymentOption",value="1")
+                            span PhonePe / BHIM UPI &nbsp;&nbsp;
+                            .form-check.mt-4
+                            .form-check-label
+                                input.form-check-input(type="radio",name="radPaymentOption",value="1")
+                            span Net Banking &nbsp;&nbsp;
+                            .form-check.mt-4
+                            .form-check-label
+                                input.form-check-input(type="radio",name="radPaymentOption",value="1")
+                            span Cache on Delivery &nbsp;&nbsp;
+                                       
+                    
+    .col-md-3   
+        .row.va-ord-summary.mt-5.mr-2.ml-1
+            .col-md-12
+                h5.card-title.mt-2 Order Summary
+                .row
+                    .col-md-12
+                        label I have voucher code 
+                .row
+                    .col-md-6
+                        input(type="text" name="txtVoucher", id="txtVoucher")
+                    .col-md-5
+                        input(type="button",value="APPLY")
+                hr        
+                .row
+                    .col-md-7
+                        label Basket Value
+                    .col-md-3.text-right
+                        span &#8377;&nbsp; #{session.cart.totalPrice}
+                .row
+                    .col-md-7
+                        label Delivery Charges
+                    .col-md-3.text-right
+                        span &#8377;&nbsp; 30
+                .row
+                    .col-md-7
+                        label Voucher Discount
+                    .col-md-3.text-right
+                        span &#8377;&nbsp; 0
+                hr
+                .row
+                    .col-md-7
+                        label Total Amount Payable
+                    .col-md-3.text-right
+                        span.font-weight-bold &#8377;&nbsp; #{session.cart.totalPrice + 30}
+                .row
+                    .col-md-6
+                        label.text-info Your Total Savings
+                    .col-md-4.text-right
+                        span.font-weight-bold.text-info &#8377;&nbsp; 340.57
+  script.
+        $("input[name$='radDeliveryOption']").click(function() {
+            var radVal = $(this).val();
+            $("div.deliveryOptions").hide();
+            $("#radDeliveryOption" + radVal).show();
+        });
+        (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+        event.preventDefault();
+        event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+        }, false);
+        });
+        }, false);
+        })();

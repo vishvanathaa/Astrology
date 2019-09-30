@@ -1,0 +1,41 @@
+extends ../layoutN
+block head
+  script(src='/js/lib/Chart.min.js')
+block layout-content
+  .pb-2.mb-2.mt-5.border-bottom
+    h2.va-mt-4 
+      p.mb-0.mt-5.ml-2 Financial Growth
+    .ml-2.mt-2.mb-20.mr-3
+        p Money holds a major proportion of our happiness. No matter what our whims are, money always takes the driver’s seat and gives the shotgun to our savings and expenditure. Maintaining a healthy balance between the two harbingers, not just happiness, it translates to a better future with impeccable finances. All this could be made possible with a Finance Horoscope Report 2019! Read how your days will be when you start planning your finances better with the Finance Horoscope predictions, based on your horoscope/ kundli. Prepared by #1 Astrologers’ Team in India at Future Point, the Free Finance Horoscope Predictions aim at highlighting your fiscal matters in light of the planetary transits and alignments in Kundli. You can satiate your desire for garnering more wealth by planning and saving up for a better future with Free Horoscope Predictions 2019.
+  .container
+    .mt-2.mb-4.text-left
+      div(style='width:93%; height:80%; margin: 0 auto;align:left;')
+        canvas#chartBar
+  script.
+    var chartData = !{financeData};
+    var ctx = document.getElementById('chartBar').getContext('2d');
+    var labels = !{chartLabels}
+    var numberOfEvents = 5;
+    var myChart = new Chart(ctx, {
+      type: 'horizontalBar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Financial Growth',
+          data: chartData,
+          backgroundColor: ["rgba(244, 81, 30, 0.3)", "rgba(255, 99, 132,0.3)", "rgba(75, 192, 192,0.3)", "rgba(153, 102, 255,0.3)", "rgba(255, 205, 86,0.3)","rgba(54, 162, 235,0.3)","rgba(204,229,255,0.3)","rgba(204,153,255,0.3)","rgba(153,255,153,0.3)","rgba(204,88,0,0.3)","rgba(255,204,0,0.3)","rgba(10,250,50,0.3)"],
+          borderColor: 'rgba(244, 81, 30, 0.9)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }
+    });
+   

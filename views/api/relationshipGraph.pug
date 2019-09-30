@@ -1,0 +1,40 @@
+extends ../layoutN
+block head
+  script(src='/js/lib/Chart.min.js')
+block layout-content
+  .pb-2.mt-2.mb-2.mt-5
+    h2.va-mt-4
+      p.ml-3.mb-0 Love and Relationship
+    .ml-3.mt-2.mb-2.mr-3
+        p Love Relationships In Horoscope – Astrology: Love, when we listen the word or see the word anywhere our mind goes to a different realm. That may be dreamy stage or the practical, we just like to feel that word. The word caries trust, closeness and much more. (compatibility sign in birth chart or kundli).
+        p To get a real love really you have to be enough lucky, because it is so rare nowadays that you can compare with water in desert. Now you can ask me that so what about them whom we see everyday in the park, discos, pubs and so many places walking together, having food together and sharing their everything with each other? If those couple are not in love so what they are doing? In my word, maximum of them are just maintaining a relationship which is based on ‘give and take’ policy, based on some conditions, sometimes it may be related to your look or money or how successful you are etc. And believe me dear, where there is ‘condition’ love can not exist there. Now you can think what the hell is this ‘Love’ can be unconditional also! Yes, real love is totally unconditional and only knows to give, do not expect anything in return. I have seen so many love marriages, they had maintained a relationships of several years and after that, they got married and just within one year of marriage they appealed for divorce in the court. Do you know why it had happened? Because they didn’t know but their relationships were based on ‘give and take policy’ only.
+  .container
+    .mt-2.mb-4.text-left
+      div(style='width:100%; height:80%; margin: 0 auto;align:left;')
+        canvas#chartBar
+  script.
+    var chartData = !{chartData};
+    var ctx = document.getElementById('chartBar').getContext('2d');
+    //var labels = !{chartLabels}
+    var labels = ['Red','Yellow','Blue']
+    var myChart = new Chart(ctx, {
+      type: 'doughnut',
+      data:{
+        datasets: [
+        {
+           data: [10,10,10,10,10,10,10,5,5,5,5,10],
+           backgroundColor: ["rgba(244, 81, 30, 0.3)", "rgba(255, 99, 132,0.3)", "rgba(75, 192, 192,0.3)", "rgba(153, 102, 255,0.3)", "rgba(255, 205, 86,0.3)","rgba(54, 162, 235,0.3)","rgba(204,229,255,0.3)","rgba(204,153,255,0.3)","rgba(153,255,153,0.3)","rgba(204,88,0,0.3)","rgba(255,204,0,0.3)","rgba(10,250,50,0.3)"],
+           hoverBackgroundColor: [
+                "#FF6384",
+                "#36A2EB",
+                "#FFCE56"
+            ]
+        }],
+        labels: ['Aries' , 'Taurus','Gemini','Cancer','Leo','Virgo','Libra','Scorpio','Sagittarius','Capricorn','Aquarius','Pisces']
+      },
+      options : {
+        rotation : -0.5 * Math.PI
+      }
+
+    });
+   

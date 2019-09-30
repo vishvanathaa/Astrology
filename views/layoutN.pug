@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title #{title} | VISHVA
+    link(rel="stylesheet" href="/style.css")
+    link(rel="stylesheet" href="/@fortawesome/fontawesome-free/css/all.css")
+    link(rel="stylesheet" href="/css/bootstrap.min.css")
+    block head
+  body
+    include partials/header
+    block layout-content
+    script(src='/js/lib/jquery.min.js')
+    script(src="/js/lib/bootstrap.min.js")
+    block scripts

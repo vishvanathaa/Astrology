@@ -1,0 +1,23 @@
+extends layout
+
+block layout-content
+  .pb-2.mt-2.mb-4.ml-2
+    h3 Content Form
+  form(method='POST')
+    .form-group.row
+        label(class='col-md-2 col-form-label font-weight-bold text-right', style='padding-top:0px;' for='signType') Sign Name :
+        .col-md-8
+          select(name='dlSign', id='dlSign')
+           each val in ['-- Select --' , 'Aries' , 'Taurus','Gemini','Cancer','Leo','Virgo','Libra','Scorpio','Sagittarius','Capricorn','Aquarius','Pisces']
+            option(value=val)=val
+    .form-group.row
+      label(class='col-md-2 col-form-label font-weight-bold text-right', for='message' style='padding-top:0px;') Description :
+      .col-md-9
+        textarea.form-control(style="font-size: 0.699rem!important;",name='message', id='message', rows='12')
+    .form-group
+      .offset-md-2.col-md-8.p-1
+        button.btn.btn-primary(type='submit')
+          i.far.fa-envelope.fa-sm
+          | &nbsp; Send Content to CLOUD &nbsp;
+          i.fas.fa-cloud-showers-heavy  
+    

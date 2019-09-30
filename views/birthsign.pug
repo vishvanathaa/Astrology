@@ -1,0 +1,38 @@
+extends layout
+block layout-content
+  .row.ml-0.va-mt-20
+    .col-md-9.va.bg-color
+      div.row(style='margin-top:8px;')
+        .col-md-4
+        .col-md-6
+          h2 !{signCode} #{sign}
+      p !{description} 
+      h4 Rate this information :
+        div#setrating1(onmouseout= "javascript:setRating1(0)")
+          img#R11(src="/images/rate0.png" alt="0" title="Not at All")
+          img#R21(src="/images/rate0.png" alt="1" title="Somewhat")
+          img#R31(src="/images/rate0.png" alt="2" title="Average")
+          img#R41(src="/images/rate0.png" alt="3" title="Good")
+          img#R51(src="/images/rate0.png" alt="4" title="Very Good")
+      a.btn.btn-warning(href="https://twitter.com/vishvanathachar" class="btn" id="b")
+        i.fab.fa-twitter &nbsp; Tweet
+      p
+        a.btn.btn-raised(href='/zodiacSign', role='button') &laquo; Back
+  script.
+      var contentId1 = 1; //should be the identity id for which rating needs to be updated
+      $('#setrating1 img').each(function(i) {
+        $(this).mouseover(function() { setRating1(i + 1) });
+        //$(this).click(function() { submitRating1(contentId1, i + 1) });
+      })
+      function setRating1(point){
+        var stars1 = new Array("R11","R21","R31","R41","R51");
+        var start1 = parseInt(point);
+        //alert(start1);
+          for(i=0;i<5;i++){
+            if(i >= start1)document.getElementById(stars1[i]).src="/images/rate0.png";
+            if(i < parseInt(point)){
+              document.getElementById(stars1[i]).src="/images/rate1.png";
+            }
+          }
+        }          
+      

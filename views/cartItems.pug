@@ -1,0 +1,35 @@
+extends layout
+block layout-content
+    .row.ml-1.card.va-mt-4.mr-1
+        div.card-body.va-cart
+            h5.card-title Items in cart (#{session.cart?session.cart.totalItems : 0})
+            ul.list-group
+                each val in cartProducts
+                    li.list-group-item.clearfix.va-cart-item.mt-1
+                        .row
+                            .col-md-1.align-top
+                                img.img-thumbnail(src="/images/gemini.png", style="width:60px;height:60px;")
+                            .col-md-5.align-top
+                                strong #{ val.item.title }
+                                br
+                                em !{val.item.description}
+                            .col-md-3.text-right.align-bottom
+                                button(type="button") -
+                                input(type="text" value="2" style='width:20px;text-align:center')
+                                button(type="button") +
+                            .col-md-3.text-right.align-text-top
+                                span #{ val.ItemPrice } X &nbsp;
+                                span.badge.badge-pill.badge-secondary #{ val.quantity }
+                                span &nbsp;&nbsp;&#8377;&nbsp;#{ val.price }
+                                a(href="/removeitem/"+val.item.id class="btn btn-default")
+                                    i.fa.fa-times-circle
+            div.text-right.va-cart-total.mt-1
+                strong.mr-2.pr-4 TOTAL :&nbsp;&nbsp;&#8377; #{totalPrice}
+                br
+                span.mr-2.pr-4 Delivery Charges  **
+            hr
+            div.text-right
+                if session.cart
+                    a(href="/checkout" type="button" class="btn btn-success") Procceed to checkout &nbsp;
+                        i.fa.fa-arrow-circle-right
+    

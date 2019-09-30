@@ -1,0 +1,25 @@
+extends layoutN
+
+block head
+  link(href='https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.1/jsgrid.min.css', rel='stylesheet')
+  link(href='https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.1/jsgrid-theme.min.css', rel='stylesheet')
+
+block layout-content
+  .row.ml-4.va-mt-20
+    .col-md-7
+      h2.ml-2 Horoscope List
+    .col-md-4.text-left
+      a(href="/horoscope")
+        button.btn.btn-primary(type='submit')
+          i.fa.fa-plus-circle
+          | &nbsp; Add Horoscope &nbsp;
+          i.fas.fa-cloud-showers-heavy
+  .row
+    .col-md-12
+      
+  //div.ml-5#jsGrid
+
+
+block scripts
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.1/jsgrid.min.js')
+  script(src='/js/horoscope.list.js')

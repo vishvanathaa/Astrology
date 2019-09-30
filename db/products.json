@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "title": "Diyas",
+    "description": "Diyas are <span class=\"label label-info\">25 CHF each</span>",
+    "price": 25
+  },
+  {
+    "id": 2,
+    "title": "Cotton Wicks",
+    "description": "Cotton are <span class=\"label label-info\">30 CHF each</span>",
+    "price": 30
+  },
+  {
+    "id": 3,
+    "title": "Kumkum",
+    "description": "Kumkum are <span class=\"label label-info\">15 CHF each</span>",
+    "price": 15
+  },
+  {
+    "id": 4,
+    "title": "Camphor",
+    "description": "Camphor are <span class=\"label label-info\">50 CHF each</span>, but are <span class=\"label label-warning\">available as 3 for the price of 2</span>",
+    "price": 100
+  },
+  {
+    "id": 5,
+    "title": "Supari / Bettle Nut",
+    "description": "Camphor are <span class=\"label label-info\">50 CHF each</span>, but are <span class=\"label label-warning\">available as 3 for the price of 2</span>",
+    "price": 100
+  },
+  {
+    "id": 6,
+    "title": "Agarbathi",
+    "description": "Agarbathi are <span class=\"label label-info\">25 CHF each</span>",
+    "price": 80
+  }
+  
+]

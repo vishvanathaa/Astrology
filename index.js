@@ -95,7 +95,7 @@ app.get("/", (req, res) => {
         { name: 'Martini', drunkness: 5 },
         { name: 'Scotch', drunkness: 10 }
     ];
-  res.render("index", { title: "Home", drinks : drinks});
+  res.render("index", { title: "Home", drinks : drinks,signDetails : []});
 });
 //app.use('/', routes);
 app.use('/clients', clients);

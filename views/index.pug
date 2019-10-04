@@ -2,15 +2,22 @@ extends layout
 
 block layout-content
   div.View.WelcomeView.mt-5
-    h8.Banner <i>Anyone can become a millionaire but</i> 
-     h3 To become a billionaire you need an astrologer.
-    div.Message
-      div.Title
-        h3 Free Consultation
-        h1 Dr. Shankara Bhat
-      h3.Details 
-        i.fa.fa-phone
-          span &nbsp;&nbsp;9980022445
+    .row
+      .col-md-12
+        h8.Banner <i>Anyone can become a millionaire but</i>
+          h8 To become a billionaire you need an astrologer.
+    .row.mt-5
+      .col-md-12
+        div.Message
+          div.Title
+            h3 Free Consultation
+            h1 Dr. Shankara Bhat
+          h3.Details 
+            i.fa.fa-phone
+              span &nbsp;&nbsp;9980022445
+            a.nav-link(href='/zodiacSign')
+              i.fa.fa-eye &nbsp;
+              span Click here
     div.NavButtons
       if isAuthenticated
         a(href="/user")

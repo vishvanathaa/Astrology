@@ -106,6 +106,7 @@ a {
 .UserView {
     background: url("images/team.jpg") left bottom;
     background-size: cover;
+    
   }
   .zodiac {
     background-image: url("images/ARIES.png") left bottom;
@@ -138,6 +139,7 @@ a {
   box-shadow: var(--ui-shawdow);
   border: 0.02rem solid rgb(192, 187, 187);
   border-radius: 5px;
+  
 }
 
 .Message > .Title {
@@ -215,7 +217,7 @@ a:hover {
   width: 100%;
   justify-content: space-around;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 
 .NavButton {
@@ -223,7 +225,7 @@ a:hover {
   justify-content: center;
   align-items: center;
 
-  height: 55px;
+  height: 30px;
   width: 150px;
 
   background: var(--highlight);

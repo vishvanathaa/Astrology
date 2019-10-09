@@ -1,7 +1,7 @@
 extends layout
 block layout-content
     .row.mt-5
-        .col-md-6.mt-2.ml-1(style='font-size:18px;')
+        .col-md-6.mt-3.ml-1(style='font-size:18px;')
             a(href="/cartItems" type="button" class="btn btn-warning") &nbsp; 
                 h7 My Cart &nbsp;
                 i.fa.fa-shopping-cart(style='color:black;font-size:20px') &nbsp;
@@ -11,7 +11,7 @@ block layout-content
                 .col-md-10
                 .col-md-2
     each item,k in products
-        .row
+        .row.mr-1
             .col-md-3
                 .row.ml-1.mt-2.Message
                         .col-md-12

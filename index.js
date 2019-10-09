@@ -16,12 +16,20 @@ const clients = require('./controllers/clients');
 const horoscopeListController = require('./controllers/horoscopeList');
 const apiController = require('./controllers/api');
 const shoppingController = require('./controllers/shopping');
+const uuidv1 = require('uuid/v1');
+const chatAccessToken = process.env.ACCESS_TOKEN;
+const AI_SESSION_ID = uuidv1();
+const dialogflow = require('apiai');
+const ai = dialogflow(chatAccessToken);
 
 app.set("views", path.join(__dirname, "views"));
+app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(__dirname + '/views')); // HTML Pages
+
 app.set("view engine", "pug");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "public")));
+
 //app.use('/scripts', express.static(path.join(__dirname +'/node_modules/@fortawesome/fontawesome-free/css')));
 app.use(express.static(path.join(__dirname, "node_modules")));
 // Authentication section
@@ -141,6 +149,46 @@ require("dotenv").config();
 if (app.get("env") === "production") {
   session.cookie.secure = true; // Serve secure cookies, requires HTTPS
 }
-app.listen(port, () => {
-    console.log(`Listening to requests on http://localhost:${port}`);
+// app.listen(port, () => {
+//     console.log(`Listening to requests on http://localhost:${port}`);
+//   });
+
+  const server = app.listen(port, function(){
+    console.log('listening on  port %d', server.address().port);
+  });
+  
+  
+  const socketio = require('socket.io')(server);
+  socketio.on('connection', function(socket){
+    console.log('a user connected');
+  });
+  
+  //Serve UI
+  app.get('/chat', (req, res) => {
+    res.sendFile(__dirname + '/views/app.html');
+  });
+  
+  socketio.on('connection', function(socket) {
+    socket.on('chat request', (text) => {
+      console.log('Message: ' + text);
+  
+      // Get a reply from API.ai
+  
+      let aiReq = ai.textRequest(text, {
+        sessionId: AI_SESSION_ID
+      });
+  
+      aiReq.on('response', (response) => {
+        let aiResponse = response.result.fulfillment.speech;
+        console.log('AI Response: ' + aiResponse);
+        socket.emit('ai response', aiResponse);
+      });
+  
+      aiReq.on('error', (error) => {
+        console.log(error);
+      });
+  
+      aiReq.end();
+  
+    });
   });

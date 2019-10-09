@@ -4,24 +4,31 @@ block layout-content
   div.View.WelcomeView.mt-5
     .row
       .col-md-12
-        h8.Banner <i>Anyone can become a millionaire but</i>
-          h8 To become a billionaire you need an astrologer.
-    .row.mt-5
+        h8.Banner Anyone can become a millionaire but to become a billionaire you need an astrologer.
+    .row.mt-3
       .col-md-12
         div.Message
           div.Title
-            h3 Free Consultation
+            h3(style="font-size:1.3rem") Free Consultation
             h1 Dr. Shankara Bhat
-          h3.Details 
+          h4.Details 
             i.fa.fa-phone
-              span &nbsp;&nbsp;9980022445
-            a.nav-link(href='/zodiacSign')
+              span(style="font-size:1.2rem") &nbsp;9980022445
+            a.mt-2(href='/zodiacSign',style="font-size:1.0rem")
               i.fa.fa-eye &nbsp;
-              span Click here
-    div.NavButtons
-      if isAuthenticated
-        a(href="/user")
-          div.NavButton Just dive in!
-      else
-        a(href="/login")
-          div.NavButton Log in
+              span Free Prediction
+          .row.mt-2
+            .col-md-12
+              a.mb-5(href="/chat")
+                i.fa.fa-user-times(aria-hidden="true") 
+                span(style="font-size:0.9rem;font-weight:bold") &nbsp;Chat with astrologer
+          .row.mt-3
+            .col-md-12
+              if isAuthenticated
+                a(href="/user")
+                  div.NavButton Just dive in!
+              else
+                a(href="/login")
+                  div.NavButton Log in
+      
+        

@@ -1,14 +1,19 @@
 extends layout
 
 block layout-content
-  div.View.UserView.mt-5
+  div.View.UserView.mt-5.pt-4
     h2.Banner Team uses AI & ML for prediction, #{userProfile.nickname}!
     div.Message
       div.Title
-        h3 Making Us the Best
-        h2 Horoscope Analysis Team
-      pre.Details=JSON.stringify(userProfile, null, 2)
-      a.btn.btn-raised(href='/zodiacSign', role='button') View Horoscope »
+        .row
+          .col-md-12
+            h4 Making Us the Best 
+            br
+            h6 Horoscope analysis team
+        .row
+          .col-md-12
+            pre.Details=JSON.stringify(userProfile, null, 2)
+            a.btn.btn-raised(href='/zodiacSign', role='button') View Horoscope »
     div.NavButtons
       if isAuthenticated
         a(href="/logout")

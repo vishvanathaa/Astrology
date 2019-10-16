@@ -10,11 +10,13 @@ block layout-content
                 input(type="radio", name="radSign" value='Taurus')
                 | &nbsp;&#9801;&nbsp;Taurus&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 input(type="radio", name="radSign" value='Gemini')
-                | &nbsp;&#9802;&nbsp;Gemini&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                | &nbsp;&#9802;&nbsp;Gemini&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                br
+                br
                 input(type="radio", name="radSign" value='Cancer')
-                | &nbsp;&#9803;&nbsp;Cancer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                | &nbsp;&#9803;&nbsp;Cancer&nbsp;&nbsp;&nbsp;
                 input(type="radio", name="radSign" value='Leo')
-                | &nbsp;&#9804;&nbsp;Cancer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                | &nbsp;&#9804;&nbsp;Leo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 input(type="radio", name="radSign" value='Virgo')
                 | &nbsp;&#9805;&nbsp;Virgo&nbsp;&nbsp;&nbsp;
                 br
@@ -25,6 +27,8 @@ block layout-content
                 | &nbsp;&#9807;&nbsp;Scorpion&nbsp;&nbsp;&nbsp;
                 input(type="radio", name="radSign" value='Sagittarius')
                 | &nbsp;&#9808;&nbsp;Sagittarius&nbsp;&nbsp;&nbsp;
+                br
+                br                
                 input(type="radio", name="radSign" value='Capricorn')
                 | &nbsp;&#9809;&nbsp;Capricorn&nbsp;&nbsp;&nbsp;
                 input(type="radio", name="radSign" value='Aquarius')
@@ -37,18 +41,19 @@ block layout-content
     .form-group.row
         label(class='col-md-1 col-form-label font-weight-bold', for='ddlStar' style='padding-top:0px;') Star :
         .col-md-6
-            select(name='ddlStar', id='ddlStar')
+            select.form-control(name='ddlStar', id='ddlStar')
                 each star in ['-- Select --' , 'Ashwini' , 'Bharani','Krittika','Rohini','Mrighashira','Ardra','Punarvasu','Pushya','Ashlesha','Magha','Purva Phalguni','Uttara Phalguni','Hasta','Chitra','Swati','Vishakha','Anuradha','Jyeshtha','Mula','Purva Ashadha','Uttara Ashadha','Sravana','Dhanistha','Shatabhisha','Purva Bhadrapada','Uttara Bhadrapada','Revati','Abhijit']
                     option(value=star)=star
-            label(class='col-md-2 col-form-label font-weight-bold', for='txtLatitude' style='padding-top:0px;') Latitude :
-            input(type="text", name="txtLatitude" id="txtLatitude" style="align:left;width:100px"  )
-            span &nbsp;
+    .form-group.row
+        label(class='col-md-1 col-form-label font-weight-bold', for='txtLatitude') Latitude :
+        .col-md-6
+            input.form-control(type="text", name="txtLatitude" id="txtLatitude" )
             i.fa.fa-map
-            label(class='col-md-2 col-form-label font-weight-bold', for='txtLongitude' style='padding-top:0px;') Longitude :
-            input(type="text", name="txtLongitude" id="txtLongitude" style="align:left;width:100px" )
-            span &nbsp;
+    .form-group.row
+        label(class='col-md-1 col-form-label font-weight-bold', for='txtLongitude') Longitude :
+        .col-md-6
+            input.form-control(type="text", name="txtLongitude" id="txtLongitude" )
             i.fa.fa-map
-        
     .form-group.row
       label(class='col-md-1 col-form-label font-weight-bold', for='message' style='padding-top:0px;') Planet :
       .col-md-6
@@ -295,7 +300,7 @@ block layout-content
     .form-group.row
       label(class='col-md-1 col-form-label font-weight-bold', for='txtPrediction' style='padding-top:0px;') Prediction :
       .col-md-8
-        textarea.form-control(name='txtPrediction', id='txtPrediction', rows='8', autofocus=(!unknownUser).toString())
+        textarea.form-control(name='txtPrediction', id='txtPrediction', rows='8')
     .form-group
       .offset-md-1.col-md-8.p-1
         button.btn.btn-primary(type='submit')

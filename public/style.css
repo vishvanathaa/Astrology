@@ -131,9 +131,9 @@ a {
   border-bottom: var(--ui-shawdow-border);
   box-shadow: var(--ui-shawdow);
 }
-
+.child { width: 100%; }
 .Message {
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.99);
   padding: 20px;
   border-bottom: var(--ui-shawdow-border);
   box-shadow: var(--ui-shawdow);

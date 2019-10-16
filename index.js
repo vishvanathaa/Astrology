@@ -168,6 +168,10 @@ if (app.get("env") === "production") {
     res.sendFile(__dirname + '/views/app.html');
   });
   
+  app.get("/chatbot", (req, res) => {
+    res.render("chatbot",{title: "Chat"})
+  });
+  
   socketio.on('connection', function(socket) {
     socket.on('chat request', (text) => {
       console.log('Message: ' + text);
